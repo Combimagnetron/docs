@@ -1,0 +1,20 @@
+---
+title: "Your first menu"
+---
+import { SyncedTabs, SyncedTab } from '/snippets/SyncedTabs.jsx';
+
+<SyncedTabs>
+  <SyncedTab title="Java">
+    <CodeBlock language="java" lines>
+      {`public final class Example {
+    private Example() {}
+}`}
+    </CodeBlock>
+  </SyncedTab>
+  <SyncedTab title="Python">
+    <CodeBlock language="python" lines>
+      {`def example():
+    pass`}
+    </CodeBlock>
+  </SyncedTab>
+</SyncedTabs>

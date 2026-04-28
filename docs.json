@@ -7,7 +7,7 @@
     "light": "#f9c22b",
     "dark": "#fb6b1d"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/logo/sunscreen.svg",
   "navigation": {
     "global": {
       "anchors": [
@@ -31,7 +31,9 @@
       {
         "tab": "Plugin Usage",
         "pages": [
-          "welcome"
+          "welcome",
+          "first-install",
+          "making-a-menu"
         ]
       },
       {
@@ -71,15 +73,14 @@
   },
   "footer": {
     "socials": {
-      "github": "https://github.com/mintlify"
+      "github": "https://github.com/Combimagnetron/Sunscreen/"
     }
   },
   "background": {
     "color": {
       "dark": "#000000",
       "light": "#ffffff"
-    },
-    "decoration": "gradient"
+    }
   },
   "appearance": {
     "strict": false
