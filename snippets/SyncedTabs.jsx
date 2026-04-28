@@ -1,19 +1,17 @@
-import { useState, useEffect, Children, isValidElement } from 'react';
-
 export const SyncedTab = ({ children }) => <>{children}</>;
 SyncedTab.displayName = 'SyncedTab';
 
 export const SyncedTabs = ({ children }) => {
-  const tabs = Children.toArray(children).filter((c) => {
-    if (!isValidElement(c)) return false;
+  const tabs = React.Children.toArray(children).filter((c) => {
+    if (!React.isValidElement(c)) return false;
     const t = c.type;
     return t === SyncedTab || t?.displayName === 'SyncedTab' || t?.name === 'SyncedTab';
   });
 
-  const [active, setActive] = useState(0);
-  const [mounted, setMounted] = useState(false);
+  const [active, setActive] = React.useState(0);
+  const [mounted, setMounted] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     setMounted(true);
     const handler = (e) => {
       const next = e.detail;
