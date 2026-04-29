@@ -1,0 +1,57 @@
+---
+title: "Getting started"
+---
+
+## Intro
+
+Sunscreen is built as an API first plugin, meaning you can do everything the editor does \+ more, even better; the editor is made using the API only! Although the API is massive and flexible it can be quite overwhelming, if the docs aren't sufficient I suggest looking through the source code.
+
+## Installation
+
+Add the dependencies to your own project
+
+<CodeGroup>
+
+```kotlin Gradle (Kotlin)
+repositories {
+	maven("https://repo.combimagnetron.net/releases")
+}
+
+dependencies {
+	compileOnly("me.combimagnetron:Passport:1.0-SNAPSHOT")
+	compileOnly("me.combimagnetron:sunscreen-api:2.0.0-SNAPSHOT")
+	//Optional: only include the minestom module when actually using Minestom.
+	compileOnly("me.combimagnetron:sunscreen-minestom:2.0.0-SNAPSHOT")
+}
+```
+
+```text Maven
+```
+
+</CodeGroup>
+
+## Startup (Minestom only)
+
+Minestom servers use Sunscreen as a library instead of a plugin, so initializing isn't done automatically. The code in the codeblock below should be run before `MinecraftServer#start()` to properly load all of the required content.
+
+<CodeGroup>
+
+```java Java
+new SunscreenLibraryMinestom();
+new PacketListener();
+AtlasFont atlasFont = AtlasFont.font(FONT_ID).fromTtfFile(FileProvider.resource().find("minecraft_font.ttf").toPath(), 8);
+AtlasFont sunburned = AtlasFont.font(SMALL_FONT_ID).fromTtfFile(FileProvider.resource().find("sunburned.ttf").toPath(), 15.8f);
+Registries.register(Registries.FONTS, atlasFont);
+Registries.register(Registries.FONTS, sunburned);
+```
+
+```kotlin Kotlin
+SunscreenLibraryMinestom()
+PacketListener()
+val atlasFont = AtlasFont.font(FONT_ID).fromTtfFile(FileProvider.resource().find("minecraft_font.ttf").toPath(), 8)
+val sunburned = AtlasFont.font(SMALL_FONT_ID).fromTtfFile(FileProvider.resource().find("sunburned.ttf").toPath(), 15.8f)
+Registries.register(Registries.FONTS, atlasFont)
+Registries.register(Registries.FONTS, sunburned)
+```
+
+</CodeGroup>

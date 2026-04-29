@@ -37,7 +37,11 @@
         ]
       },
       {
-        "tab": "API Usage"
+        "tab": "API Usage",
+        "pages": [
+          "getting-started",
+          "your-first-menu"
+        ]
       }
     ]
   },
